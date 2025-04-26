@@ -28,7 +28,7 @@ from langchain.prompts import (
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 import streamlit as st
-
+OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 # memory_final = ConversationBufferMemory(memory_key="history", return_messages=True)
 # memory_final = ConversationBufferMemory(human_prefix="Patient", ai_prefix="Therapist", memory_key="history", return_messages=True)
 
@@ -46,7 +46,7 @@ def response_Genration_from_GPT4(tem, user_query,conversation_memory):
                                    llm=ChatOpenAI(
                                        model= 'gpt-4o',
                                        temperature=0.6, 
-                                       openai_api_key=st.secrets["OPENAI_API_KEY"]), verbose=True)
+                                       openai_api_key=OPENAI_API_KEY), verbose=True)
   response = conversation.predict(input=user_query)
   return response
 
@@ -55,7 +55,7 @@ def response_Genration_from_GPT4(tem, user_query,conversation_memory):
 def SubsetSelection(prompt):
     client = OpenAI(
             # defaults to os.environ.get("OPENAI_API_KEY")
-            api_key=st.secrets["OPENAI_API_KEY"],
+            api_key=OPENAI_API_KEY,
         )
 
     chat_completion = client.chat.completions.create(
