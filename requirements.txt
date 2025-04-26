@@ -8,3 +8,4 @@ openai
 langchain
 langchain-openai
 streamlit-chat
+anthropic
