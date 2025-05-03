@@ -154,13 +154,20 @@ if user_msg:
         #reward_data = json.loads(actual_reward)
         #print("Reward After Json Data", reward_data)
         
-        # Determine The Reward with Criteria
+        # Determine The Reward with Criteria for OpenAI
         Subset_prompt  = PromptInisilization.subset_detection_with_weight(message_history,user_msg,st.session_state.action)
         actual_reward = Response.SubsetSelection(Subset_prompt)
         print("Before Extract Reawrd: ",actual_reward)
         reward_data = json.loads(actual_reward)
         print("Reward After Json Data", reward_data)
         
+        # Determine The Reward with Criteria for Antropic
+        # Subset_prompt  = PromptInisilization.subset_detection_with_weight(message_history,user_msg,st.session_state.action)
+        # actual_reward = Response.SubsetSelection_Anthropic_test(Subset_prompt)
+        # print("Before Extract Reawrd: ",actual_reward)
+        # reward_data = json.loads(actual_reward)
+        # print("Reward After Json Data", reward_data)
+
         
         # Data Extraction
         best_action = treeBuildCriteria.dataImport(reward_data)
