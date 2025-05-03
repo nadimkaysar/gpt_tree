@@ -29,6 +29,10 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 import streamlit as st
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
+
+antropic_API_KEY = st.secrets["Antropic_API_KEY"]
+
+
 # memory_final = ConversationBufferMemory(memory_key="history", return_messages=True)
 # memory_final = ConversationBufferMemory(human_prefix="Patient", ai_prefix="Therapist", memory_key="history", return_messages=True)
 
@@ -69,6 +73,111 @@ def SubsetSelection(prompt):
         )
     chat_completion = str(chat_completion.choices[0].message.content)
     return chat_completion
+
+def response_generation_from_antropic(tem, user_query,conversation_memory):
+
+    system_msg_template = SystemMessagePromptTemplate.from_template(template=tem)
+
+    human_msg_template = HumanMessagePromptTemplate.from_template(template="{input}")
+    prompt_template = ChatPromptTemplate.from_messages(
+                                                        [system_msg_template,
+                                                        MessagesPlaceholder(variable_name="history"),
+                                                        human_msg_template])
+    Anthropic_llm = ChatAnthropic(model="claude-3-7-sonnet-20250219",
+                        temperature = 0.6,
+                        anthropic_api_key= antropic_API_KEY)
+    
+    conversation = ConversationChain(memory = conversation_memory, 
+                                   prompt = prompt_template, 
+                                   llm = Anthropic_llm, 
+                                   verbose=True)
+    response = conversation.predict(input=user_query)
+    res1 = response.strip()
+    res2 = res1.lstrip()
+    res3 = res2.rstrip()
+    return str(res3)
+
+
+def SubsetSelection_Anthropic(prompt):
+    client = anthropic.Anthropic(
+            # defaults to os.environ.get("OPENAI_API_KEY")
+            api_key= antropic_API_KEY
+        )
+    message = client.messages.create(
+        model="claude-3-7-sonnet-20250219",
+        max_tokens=2000,
+        temperature=0.1,
+        system="You need to follow user role Prompt instruction, you need to give just json response without any other text",
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": """You need to follow  Prompt instruction: {prompt} for response generation.
+                        You have to follow specific json response format which I set below:
+                            {
+                            "input": {
+                                "user_previous_utterance": "string",
+                                "user_last_utterance": "string",
+                                "emotional_state": {
+                                "emotions": [
+                                    {
+                                    "type": "string",
+                                    "intensity": "string"
+                                    }
+                                ]
+                                },
+                                "context": "First session. No specific incidents mentioned"
+                            },
+                            "predictions": {
+                                "Mindfulness": {
+                                "possible_states": [
+                                    {
+                                    "mental_state_description": "Emotion: 'string' Symptoms: 'string'",
+                                    "probability": "number",
+                                    "reward": "number"
+                                    }
+                                ]
+                                },
+                                "Distress_Tolerance": {
+                                "possible_states": [
+                                    {
+                                    "mental_state_description": "Emotion: 'string' Symptoms: 'string'",
+                                    "probability": "number",
+                                    "reward": "number"
+                                    }
+                                ]
+                                },
+                                "Interpersonal_Effectiveness": {
+                                "possible_states": [
+                                    {
+                                    "mental_state_description": "Emotion: 'string' Symptoms: 'string'",
+                                    "probability": "number",
+                                    "reward": "number"
+                                    },
+                                ]
+                                },
+                                "Emotion_Regulation": {
+                                "possible_states": [
+                                    {
+                                    "mental_state_description": "Emotion: 'string' Symptoms: 'string'",
+                                    "probability": "number",
+                                    "reward": "number"
+                                    }
+                                ]
+                                },
+                                "IsUserAskQuestion": "number"
+                            }
+                            }
+                        """
+                    }
+                ]
+            }
+        ]
+    )
+    return message.content[0].text
+
 
 
 
