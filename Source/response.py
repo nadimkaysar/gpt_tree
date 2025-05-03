@@ -180,5 +180,154 @@ def SubsetSelection_Anthropic(prompt):
 
 
 
+def SubsetSelection_Anthropic_test(prompt):
+    client = anthropic.Anthropic(
+            # defaults to os.environ.get("OPENAI_API_KEY")
+            api_key= antropic_API_KEY
+        )
+    message = client.messages.create(
+        model="claude-3-7-sonnet-20250219",
+        max_tokens=2000,
+        temperature=0.1,
+        system="You need to follow user role Prompt instruction, you need to give just json response without any other text",
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": """You need to follow  Prompt instruction: {prompt} for response generation.
+                        You have to follow specific json response format which I set below:
+                         "input": {
+                            "user_previous_utterance": "string",
+                            "user_last_utterance": "string",
+                            "emotional_state": {
+                            "emotions": [
+                                {
+                                "type": "string",
+                                "intensity": "string"
+                                }
+                            ]
+                            },
+                            "context": "First session. No specific incidents mentioned"
+                        },
+                        "predictions": {
+                            "Mindfulness": {
+                            "possible_states": [
+                                {
+                                "mental_state_description": "Emotion: 'string' Symptoms: 'string'",
+                                "probability": "number",
+                                "rewards":[
+                                    {
+                                    "Impact_on_well_being_reward": "number",
+                                    "Impact_on_well_being_weight": "number"
+                                    },
+                                    {
+                                    "Patient_goal_achievement_reward": "number",
+                                    "Patient_goal_achievement_weight": "number"
+                                    },
+                                    {
+                                    "Patient_satisfaction_reward": "number",
+                                    "Patient_satisfaction_weight": "number",
+                                    },
+                                    {
+                                    "Feedback_Quality_reward": "number",
+                                    "Feedback_Quality_weight": "number"
+                                    }
+                                ]
+                                }
+                            ]
+                            },
+                            "Distress_Tolerance": {
+                            "possible_states": [
+                                {
+                                "mental_state_description": "Emotion: 'string' Symptoms: 'string'",
+                                "probability": "number",
+                                "rewards":[
+                                    {
+                                    "Impact_on_well_being_reward": "number",
+                                    "Impact_on_well_being_weight": "number"
+                                    },
+                                    {
+                                    "Patient_goal_achievement_reward": "number",
+                                    "Patient_goal_achievement_weight": "number"
+                                    },
+                                    {
+                                    "Patient_satisfaction_reward": "number",
+                                    "Patient_satisfaction_weight": "number",
+                                    },
+                                    {
+                                    "Feedback_Quality_reward": "number",
+                                    "Feedback_Quality_weight": "number"
+                                    }
+                                ]
+                                }
+                            ]
+                            },
+                            "Interpersonal_Effectiveness": {
+                            "possible_states": [
+                                {
+                                "mental_state_description": "Emotion: 'string' Symptoms: 'string'",
+                                "probability": "number",
+                                "rewards":[
+                                    {
+                                    "Impact_on_well_being_reward": "number",
+                                    "Impact_on_well_being_weight": "number"
+                                    },
+                                    {
+                                    "Patient_goal_achievement_reward": "number",
+                                    "Patient_goal_achievement_weight": "number"
+                                    },
+                                    {
+                                    "Patient_satisfaction_reward": "number",
+                                    "Patient_satisfaction_weight": "number",
+                                    },
+                                    {
+                                    "Feedback_Quality_reward": "number",
+                                    "Feedback_Quality_weight": "number"
+                                    }
+                                ]
+                                },
+                            ]
+                            },
+                            "Emotion_Regulation": {
+                            "possible_states": [
+                                {
+                                "mental_state_description": "Emotion: 'string' Symptoms: 'string'",
+                                "probability": "number",
+                                "rewards":[
+                                    {
+                                    "Impact_on_well_being_reward": "number",
+                                    "Impact_on_well_being_weight": "number"
+                                    },
+                                    {
+                                    "Patient_goal_achievement_reward": "number",
+                                    "Patient_goal_achievement_weight": "number"
+                                    },
+                                    {
+                                    "Patient_satisfaction_reward": "number",
+                                    "Patient_satisfaction_weight": "number",
+                                    },
+                                    {
+                                    "Feedback_Quality_reward": "number",
+                                    "Feedback_Quality_weight": "number"
+                                    }
+                                ]
+                                }
+                            ]
+                            },
+                        "IsUserAskQuestion": "number" 
+                        }
+                        }
+                        """
+                    }
+                ]
+            }
+        ]
+    )
+    return message.content[0].text
+
+
+
 
 
