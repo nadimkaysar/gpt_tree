@@ -155,18 +155,18 @@ if user_msg:
         #print("Reward After Json Data", reward_data)
         
         # Determine The Reward with Criteria for OpenAI
-        Subset_prompt  = PromptInisilization.subset_detection_with_weight(message_history,user_msg,st.session_state.action)
-        actual_reward = Response.SubsetSelection(Subset_prompt)
-        print("Before Extract Reawrd: ",actual_reward)
-        reward_data = json.loads(actual_reward)
-        print("Reward After Json Data", reward_data)
-        
-        # Determine The Reward with Criteria for Antropic
         # Subset_prompt  = PromptInisilization.subset_detection_with_weight(message_history,user_msg,st.session_state.action)
-        # actual_reward = Response.SubsetSelection_Anthropic_test(Subset_prompt)
+        # actual_reward = Response.SubsetSelection(Subset_prompt)
         # print("Before Extract Reawrd: ",actual_reward)
         # reward_data = json.loads(actual_reward)
         # print("Reward After Json Data", reward_data)
+        
+        # Determine The Reward with Criteria for Antropic
+        Subset_prompt  = PromptInisilization.subset_detection_with_weight(message_history,user_msg,st.session_state.action)
+        actual_reward = Response.SubsetSelection_Anthropic_test(Subset_prompt)
+        print("Before Extract Reawrd: ",actual_reward)
+        reward_data = json.loads(actual_reward)
+        print("Reward After Json Data", reward_data)
 
         
         # Data Extraction
@@ -185,7 +185,7 @@ if user_msg:
         print("Test Subset Print: ",best_action)
     
     # promptType = PromptInisilization.EnglishConversationPromptForGPT4oV8_testing(message_history,best_action,user_msg)
-    promptType = PromptInisilization.EnglishConversationPromptFor_Student_V12(message_history,best_action,user_msg)
+    promptType = PromptInisilization.EnglishConversationPromptFor_Student_V11(message_history,best_action,user_msg)
     # promptType = PromptInisilization.JapaneseConversationPromptFor_Student_V11(message_history,best_action,user_msg)
     # promptType = PromptInisilization.EnglishConversationPromptForGPT4oV7_japansese(message_history,best_action,user_msg)
     
@@ -199,7 +199,8 @@ if user_msg:
               memory.save_context({'input':message['human']},{'output':message['AI']})
 
     # Response Generation
-    response = Response.response_Genration_from_GPT4(promptType,user_msg,memory)
+    response = Response.response_generation_from_antropic(promptType,user_msg,memory)
+    # response = Response.response_Genration_from_GPT4(promptType,user_msg,memory)
     print("Final Response: ",response)
     
     # Save in Session
