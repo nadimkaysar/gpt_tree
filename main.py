@@ -227,12 +227,10 @@ import os
 import streamlit as connections
 from sqlalchemy import text
 
-connection_url = (
-    'postgresql://neondb_owner:npg_VX32wptUvbBr@ep-broad-bush-aeswvk7d-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
-)
+neon = st.secrets["neon"]
 
 # Initialize connection with kwargs
-conn = st.connection("neondb", type="sql", url=connection_url)
+conn = st.connection("neondb", type="sql", url=neon)
 
 
 name = "nadim"
