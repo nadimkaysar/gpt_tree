@@ -240,7 +240,7 @@ if st.button("Insert"):
     if name and email:
         with conn.session as session:
             session.execute(
-                text("INSERT INTO user (name, email, password) VALUES (:name, :email, :password);"),
+                text("INSERT INTO "user" (name, email, password) VALUES (:name, :email, :password);"),
                 {"name": name, "email": email, "password":password}
             )
             session.commit()
