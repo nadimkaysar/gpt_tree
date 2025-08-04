@@ -10,5 +10,4 @@ langchain-openai
 streamlit-chat
 anthropic
 langchain_anthropic
-
-sqlalchemy
+psycopg2-binary
