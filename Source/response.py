@@ -54,6 +54,27 @@ def response_Genration_from_GPT4(tem, user_query,conversation_memory):
   response = conversation.predict(input=user_query)
   return response
 
+def response_Generation_from_GPT4_test(tem, user_query,memory_buffer):
+  system_msg_template = SystemMessagePromptTemplate.from_template(template=tem)
+
+  human_msg_template = HumanMessagePromptTemplate.from_template(template="{input}")
+  prompt_template = ChatPromptTemplate.from_messages(
+                                                    [system_msg_template,
+                                                     MessagesPlaceholder(variable_name="history"),
+                                                     human_msg_template])
+  # Confirm expected inputs
+  prompt_template = prompt_template.partial(user_message=user_query)
+  print("Prompt expects:", prompt_template.input_variables)
+  conversation = ConversationChain(memory=memory_buffer, 
+                                   prompt=prompt_template, 
+                                   llm=ChatOpenAI(
+                                       model= 'gpt-4.1',
+                                       temperature=0.6, 
+                                       openai_api_key=OPENAI_API_KEY), 
+                                       verbose=True)
+  response = conversation.predict(input=user_query)
+  return response
+
 
 def dialogueStateDetection(prompt):
     client = OpenAI(
