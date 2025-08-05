@@ -55,6 +55,24 @@ def response_Genration_from_GPT4(tem, user_query,conversation_memory):
   return response
 
 
+def dialogueStateDetection(prompt):
+    client = OpenAI(
+            # defaults to os.environ.get("OPENAI_API_KEY")
+            api_key= OPENAI_API_KEY,
+        )
+    chat_completion = client.chat.completions.create(
+            model="gpt-4o",
+            temperature = 0.5,
+            response_format={ "type": "json_object" },
+            messages=[
+                    {"role": "system", "content": "Follow user Prompt"},
+                    {"role": "user", "content": prompt}
+                ]
+        )
+    chat_completion = str(chat_completion.choices[0].message.content)
+    return chat_completion
+
+
 
 def SubsetSelection(prompt):
     client = OpenAI(
