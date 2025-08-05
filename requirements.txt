@@ -11,3 +11,5 @@ streamlit-chat
 anthropic
 langchain_anthropic
 psycopg2-binary
+
+streamlit-cookies-controller
