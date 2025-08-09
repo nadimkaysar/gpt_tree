@@ -480,7 +480,7 @@ def archive_messages(log_conversation_from_session):
                 
                 # promptType = PromptInisilization.EnglishConversationPromptForGPT4oV8_testing(message_history,best_action,user_msg)
                 # promptType = PromptInisilization.EnglishConversationPromptFor_Student_V11(message_history,best_action,user_msg)
-                promptType = PromptInisilization.dbt_counseling(message_history,best_action,user_msg)
+                #promptType = PromptInisilization.dbt_counseling(message_history,best_action,user_msg)
                 # promptType = PromptInisilization.JapaneseConversationPromptFor_Student_V12(message_history,best_action,user_msg)
                 # promptType = PromptInisilization.EnglishConversationPromptForGPT4oV7_japansese(message_history,best_action,user_msg)
             
