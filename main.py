@@ -519,153 +519,153 @@ def archive_messages(log_conversation_from_session):
 
 #---------------------------------------------
 
- st.title("Well-Being Support For Student")
-    if "chat_log" not in st.session_state:
-        st.session_state.chat_log = []
-        st.session_state.state_log = []
+st.title("Well-Being Support For Student")
+if "chat_log" not in st.session_state:
+    st.session_state.chat_log = []
+    st.session_state.state_log = []
 
-    utterance_list = []
-    user_msg = st.chat_input("Enter Your Thought")
+utterance_list = []
+user_msg = st.chat_input("Enter Your Thought")
 
-    if 'count' not in st.session_state: 
-        st.session_state.count = 0
+if 'count' not in st.session_state: 
+    st.session_state.count = 0
 
-    if st.chat_input:
-        st.session_state.count += 1
+if st.chat_input:
+    st.session_state.count += 1
+
+if 'FlagState' not  in st.session_state:
+    st.session_state.FlagState = None
+
+if 'chat_history' not in st.session_state:
+    st.session_state.chat_history = None
+
+if "action" not in st.session_state:
+    st.session_state.action = None
+
+if "state_value" not in st.session_state:
+    st.session_state.state_value = None
+
+print('Count = ' + str(st.session_state.count))
+
+if user_msg:
+    for chat in st.session_state.chat_log:
+        with st.chat_message(chat["name"]):
+            st.write(chat["msg"])
+
+    with st.chat_message(USER_NAME):
+        st.write(user_msg)
     
-    if 'FlagState' not  in st.session_state:
-        st.session_state.FlagState = None
-    
-    if 'chat_history' not in st.session_state:
-        st.session_state.chat_history = None
-    
-    if "action" not in st.session_state:
-        st.session_state.action = None
-    
-    if "state_value" not in st.session_state:
-        st.session_state.state_value = None
+    # if 'action' not in st.session_state:
+    #     st.session_state.action = None
 
-    print('Count = ' + str(st.session_state.count))
-
-    if user_msg:
-        for chat in st.session_state.chat_log:
-            with st.chat_message(chat["name"]):
-                st.write(chat["msg"])
-
-        with st.chat_message(USER_NAME):
-            st.write(user_msg)
+    # promptInitilize and StateDefine
+    # stateSelectionPrompt = PromptInisilization.stateDefine(history, user_msg)
+   
+    if st.session_state.count >= 1:
+        if st.session_state.FlagState != True:  
+            dialogueStatePrompt = PromptInisilization.dialogueStatePrompt(st.session_state.chat_history, user_msg)
+            dialogueState = Response.dialogueStateDetection(dialogueStatePrompt)
+            state_information = json.loads(dialogueState)
+            state_value = int(state_information["predictions"]["state"])
+            if state_value == 1:
+                st.session_state.state_value = True
+            print("State value:", state_value)
         
-        # if 'action' not in st.session_state:
-        #     st.session_state.action = None
-
-        # promptInitilize and StateDefine
-        # stateSelectionPrompt = PromptInisilization.stateDefine(history, user_msg)
-       
-        if st.session_state.count >= 1:
-            if st.session_state.FlagState != True:  
-                dialogueStatePrompt = PromptInisilization.dialogueStatePrompt(st.session_state.chat_history, user_msg)
-                dialogueState = Response.dialogueStateDetection(dialogueStatePrompt)
-                state_information = json.loads(dialogueState)
-                state_value = int(state_information["predictions"]["state"])
-                if state_value == 1:
-                    st.session_state.state_value = True
-                print("State value:", state_value)
-            
-            archive_messages(st.session_state.chat_log)
-            if st.session_state.FlagState != True:
-                if (state_value == 0 and st.session_state.count < 7) or st.session_state.count < 7:
-                    # problem understand
-                    promptType = PromptInisilization.self_explorer(message_history,user_msg)
-                    
-                    # Save in Memory for Management
-                    if st.session_state.chat_history is None:
-                       st.session_state.chat_history = []
-                    else:
-                       for message in st.session_state.chat_history:
-                          memory.save_context({'input':message['human']},{'output':message['AI']})
-                    
-                    response = Response.response_Generation_from_GPT4_test(promptType,user_msg,memory)
-
-                    print("Final Response: ",response)
-
-                    # Save in Session
-                    message = {'human':user_msg,'AI':response}
-                    st.session_state.chat_history.append(message)
-
-                    if (st.session_state.state_value == True and st.session_state.count > 5) or st.session_state.count == 6:
-                    # if st.session_state.count == 6:
-                        st.session_state.FlagState = True
-            
-            elif st.session_state.FlagState == True:
+        archive_messages(st.session_state.chat_log)
+        if st.session_state.FlagState != True:
+            if (state_value == 0 and st.session_state.count < 7) or st.session_state.count < 7:
+                # problem understand
+                promptType = PromptInisilization.self_explorer(message_history,user_msg)
                 
-                # Determine The Reward
-                Subset_prompt  = PromptInisilization.determine_reward_final(message_history,user_msg,st.session_state.action)
-                actual_reward = Response.SubsetSelection(Subset_prompt)
-                print("Before Extract Reawrd: ",actual_reward)
-                reward_data = json.loads(actual_reward)
-                print("Reward After Json Data", reward_data)
-                
-                # Determine The Reward with Criteria OpenAI
-                # Subset_prompt  = PromptInisilization.subset_detection_with_weight(message_history,user_msg,st.session_state.action)
-                # actual_reward = Response.SubsetSelection(Subset_prompt)
-                # print("Before Extract Reawrd: ",actual_reward)
-                # reward_data = json.loads(actual_reward)
-                # print("Reward After Json Data", reward_data)
-
-                # Determine The Reward with Criteria Antropic
-                # Subset_prompt  = PromptInisilization.subset_detection_with_weight(message_history,user_msg,st.session_state.action)
-                # actual_reward = Response.SubsetSelection_Anthropic_test(Subset_prompt)
-                # print("Before Extract Reawrd: ",actual_reward)
-                # reward_data = json.loads(actual_reward)
-                # print("Reward After Json Data", reward_data)
-            
-            
-                # Data Extraction
-                best_action = treeBuild.dataImport(reward_data)
-
-                st.session_state.action = best_action
-                
-                # MCTS Code Implimentation
-                # mcts_prompt = PromptInisilization.MCTS_prompt(message_history,user_msg)
-                # subset = MCTS.testMCTS(mcts_prompt)
-                # print("Test Subset from MCTS", subset)
-                # subset = "problem_understand"
-
-                
-                # promptType = PromptInisilization.EnglishConversationPromptForGPT4oV8_testing(message_history,best_action,user_msg)
-                # promptType = PromptInisilization.EnglishConversationPromptFor_Student_V11(message_history,best_action,user_msg)
-                promptType = PromptInisilization.dbt_counseling(message_history,best_action,user_msg)
-                # promptType = PromptInisilization.JapaneseConversationPromptFor_Student_V12(message_history,best_action,user_msg)
-                # promptType = PromptInisilization.EnglishConversationPromptForGPT4oV7_japansese(message_history,best_action,user_msg)
-            
-                # promptType = PromptInisilization.JapaneseConversationPromptForGPT4o(message_history,subset,patient_messages)
-            
                 # Save in Memory for Management
-                if 'chat_history' not in st.session_state:
-                    st.session_state.chat_history = []
+                if st.session_state.chat_history is None:
+                   st.session_state.chat_history = []
                 else:
-                    for message in st.session_state.chat_history:
-                        memory.save_context({'input':message['human']},{'output':message['AI']})
-
-                # Response Generation
-                #response = Response.response_generation_from_antropic(promptType,user_msg,memory)
-                response = Response.response_Generation_from_GPT4_test(promptType,user_msg,memory)
-                print("Final Response: ",response)
+                   for message in st.session_state.chat_history:
+                      memory.save_context({'input':message['human']},{'output':message['AI']})
                 
+                response = Response.response_Generation_from_GPT4_test(promptType,user_msg,memory)
+
+                print("Final Response: ",response)
+
                 # Save in Session
                 message = {'human':user_msg,'AI':response}
                 st.session_state.chat_history.append(message)
 
-        with st.chat_message(ASSISTANT_NAME):
-            assistant_msg = ""
-            assistant_response_area = st.empty()
+                if (st.session_state.state_value == True and st.session_state.count > 5) or st.session_state.count == 6:
+                # if st.session_state.count == 6:
+                    st.session_state.FlagState = True
+        
+        elif st.session_state.FlagState == True:
             
-            # for chunk in response:
-            tmp_assistant_msg = response
-            assistant_msg += tmp_assistant_msg
-            assistant_response_area.write(assistant_msg)
+            # Determine The Reward
+            Subset_prompt  = PromptInisilization.determine_reward_final(message_history,user_msg,st.session_state.action)
+            actual_reward = Response.SubsetSelection(Subset_prompt)
+            print("Before Extract Reawrd: ",actual_reward)
+            reward_data = json.loads(actual_reward)
+            print("Reward After Json Data", reward_data)
+            
+            # Determine The Reward with Criteria OpenAI
+            # Subset_prompt  = PromptInisilization.subset_detection_with_weight(message_history,user_msg,st.session_state.action)
+            # actual_reward = Response.SubsetSelection(Subset_prompt)
+            # print("Before Extract Reawrd: ",actual_reward)
+            # reward_data = json.loads(actual_reward)
+            # print("Reward After Json Data", reward_data)
 
-        # st.session_state.state_log.append({"name": State_component, "msg": best_action})
-        # print("State Log Print for the system: ", st.session_state.state_log )
-        st.session_state.chat_log.append({"name": USER_NAME, "msg": user_msg})
-        st.session_state.chat_log.append({"name": ASSISTANT_NAME, "msg": assistant_msg})
+            # Determine The Reward with Criteria Antropic
+            # Subset_prompt  = PromptInisilization.subset_detection_with_weight(message_history,user_msg,st.session_state.action)
+            # actual_reward = Response.SubsetSelection_Anthropic_test(Subset_prompt)
+            # print("Before Extract Reawrd: ",actual_reward)
+            # reward_data = json.loads(actual_reward)
+            # print("Reward After Json Data", reward_data)
+        
+        
+            # Data Extraction
+            best_action = treeBuild.dataImport(reward_data)
+
+            st.session_state.action = best_action
+            
+            # MCTS Code Implimentation
+            # mcts_prompt = PromptInisilization.MCTS_prompt(message_history,user_msg)
+            # subset = MCTS.testMCTS(mcts_prompt)
+            # print("Test Subset from MCTS", subset)
+            # subset = "problem_understand"
+
+            
+            # promptType = PromptInisilization.EnglishConversationPromptForGPT4oV8_testing(message_history,best_action,user_msg)
+            # promptType = PromptInisilization.EnglishConversationPromptFor_Student_V11(message_history,best_action,user_msg)
+            promptType = PromptInisilization.dbt_counseling(message_history,best_action,user_msg)
+            # promptType = PromptInisilization.JapaneseConversationPromptFor_Student_V12(message_history,best_action,user_msg)
+            # promptType = PromptInisilization.EnglishConversationPromptForGPT4oV7_japansese(message_history,best_action,user_msg)
+        
+            # promptType = PromptInisilization.JapaneseConversationPromptForGPT4o(message_history,subset,patient_messages)
+        
+            # Save in Memory for Management
+            if 'chat_history' not in st.session_state:
+                st.session_state.chat_history = []
+            else:
+                for message in st.session_state.chat_history:
+                    memory.save_context({'input':message['human']},{'output':message['AI']})
+
+            # Response Generation
+            #response = Response.response_generation_from_antropic(promptType,user_msg,memory)
+            response = Response.response_Generation_from_GPT4_test(promptType,user_msg,memory)
+            print("Final Response: ",response)
+            
+            # Save in Session
+            message = {'human':user_msg,'AI':response}
+            st.session_state.chat_history.append(message)
+
+    with st.chat_message(ASSISTANT_NAME):
+        assistant_msg = ""
+        assistant_response_area = st.empty()
+        
+        # for chunk in response:
+        tmp_assistant_msg = response
+        assistant_msg += tmp_assistant_msg
+        assistant_response_area.write(assistant_msg)
+
+    # st.session_state.state_log.append({"name": State_component, "msg": best_action})
+    # print("State Log Print for the system: ", st.session_state.state_log )
+    st.session_state.chat_log.append({"name": USER_NAME, "msg": user_msg})
+    st.session_state.chat_log.append({"name": ASSISTANT_NAME, "msg": assistant_msg})
