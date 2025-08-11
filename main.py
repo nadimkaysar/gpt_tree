@@ -573,7 +573,7 @@ if user_msg:
         
         archive_messages(st.session_state.chat_log)
         if st.session_state.FlagState != True:
-            if (state_value == 0 and st.session_state.count < 7) or st.session_state.count < 7:
+            if (state_value == 0 and st.session_state.count < 8) or st.session_state.count < 8:
                 # problem understand
                 promptType = PromptInisilization.self_explorer(message_history,user_msg)
                 
@@ -592,7 +592,7 @@ if user_msg:
                 message = {'human':user_msg,'AI':response}
                 st.session_state.chat_history.append(message)
 
-                if (st.session_state.state_value == True and st.session_state.count > 5) or st.session_state.count == 6:
+                if (st.session_state.state_value == True and st.session_state.count > 6) or st.session_state.count == 7:
                 # if st.session_state.count == 6:
                     st.session_state.FlagState = True
         
