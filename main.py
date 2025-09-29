@@ -373,7 +373,7 @@ if user_msg:
         assistant_response_area = st.empty()
         
         # for chunk in response:
-        tmp_assistant_msg = optimized_answer
+        tmp_assistant_msg = base_response
         assistant_msg += tmp_assistant_msg
         assistant_response_area.write(assistant_msg)
 
