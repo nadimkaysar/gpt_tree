@@ -201,7 +201,7 @@ def problem_understanding_response(dialogueAct:str,history,user_message):
         - If the patient asks any question, you need to answer it properly as mental heath specilist, then gently start understand student's problem / context and collecting symptoms.
         - If patient hesitant, start with gentle, low-stakes questions before deeper ones.  
         - Offer choices instead of forcing disclosure when possible.
-        - Can't generate same question and same text/content. If patient hesitant, start with gentle, low-stakes questions before deeper ones.  
+        - Can't generate same question, same phrase and gratitude like ('Thank you'). If patient hesitant, start with gentle, low-stakes questions before deeper ones.  
         - If patient looking for solutions, strategies, or coping methods then you remind then about problem understanding phase. 
         - Need to generate your response within 60 words, I repeat, you need to generate your response within 60 words.
 
