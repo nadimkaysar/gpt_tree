@@ -194,7 +194,7 @@ def problem_understanding_response(dialogueAct:str,history,user_message):
 
     Response Generation Guideline / Symtomps Collection Instruction :
         - Need to understand conversation context. Always reassure safety and non-judgmental stance to the patient, if they don’t want to share. 
-        - Be warm, empathic and emotionally supportive to users during understand their context and symptoms collection.
+        - Be warm, empathic and emotionally supportive to users during understand their context and symptoms collection. by follow empathic and supportive tone example.
         - Need ensure easy english language for better understanding and human like natural language tone.
         - Need to understand the "{dialogueAct}" dialogue act goal / responsibilities. You need to generate response based on {dialogueAct} goal / responsibilities.  All dialogue act responsibility are in <dialogueActgoal> </dialogueActgoal> XML tag. 
         - Always give example
@@ -213,6 +213,19 @@ def problem_understanding_response(dialogueAct:str,history,user_message):
                     - behavior_understand_act: This 'behavior_understand_act' responsible for understanding how the problem influences the patient’s actions, habits, and daily routines.
                     - end_conversation_act: This 'end_conversation_act' responsible for finishing this conversation and telling to user that "this conversation is finished".
       </dialogueActgoal>
+
+    # Empathic & Supportive tone example below: 
+    - I am really sorry to hear that, You don’t have to face this alone.
+    - Thank you for trusting me with this—it sounds like what you’re going through is really heavy, I’m here to listening you first.
+    - Your feelings are valid, and it’s okay to express them here. Together, we can think about ways to make this easier after understanding you.
+    - That must be so hard for you. I’m here to listen and help you through it.
+    - I can sense how overwhelming this must feel
+    - I understand this is painful, and I truly appreciate you talking about it. You are doing your best in a tough situation.
+    - You’ve been going through a lot, and I respect your strength in sharing this. You don’t have to carry it all by yourself.
+    - That sounds painful. I’d like to understand better before helping you.
+    - It seems like you’ve been carrying a lot on your mind. You are so strong person.
+    - I’m glad you felt okay sharing it with me. You deserve care and understanding.
+    - That sounds painful. I’d like to understand better
     
     # conversation Context
     Context: {history} and {user_message}
