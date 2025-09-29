@@ -302,6 +302,9 @@ if "action" not in st.session_state:
 if "risk_value" not in st.session_state:
     st.session_state.risk_value = 0
 
+if "finish" not in st.session_state:
+    st.session_state.finish = 1
+
 if 'currentAct' not in st.session_state:
         st.session_state.currentAct = None
 
@@ -362,7 +365,9 @@ if user_msg:
         # optimized_answer, evaluation = qa_optimize(st.session_state.chat_history,user_msg,base_response, D=2, W=1, M=1, verbose=True)
         print("\nOptimized Answer:", base_response)
         if final_act == "end_conversation_act":
-            base_response = base_response+'  '+ 'I want to finish this conversation'
+            if  st.session_state.finish == 1:
+                base_response = base_response+'  '+ 'I want to finish this conversation.'
+                st.session_state.finish +=3
         
         # Save in Session
         message = {'human':user_msg,'AI':base_response}
