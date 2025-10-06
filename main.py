@@ -46,8 +46,7 @@ if user_msg:
 
     print("Chat history",st.session_state.chat_history)
     
-
-    responePrompt = PromptInisilization.baseLine()
+    responePrompt = PromptInisilization.counseling_prompt()
     response = Response.response_Generation_from_GPT4_test(responePrompt,user_msg,memory)
 
     # Save in Session
