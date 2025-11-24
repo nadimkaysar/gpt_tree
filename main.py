@@ -123,10 +123,8 @@ if user_msg:
         if st.session_state.FlagState != True:
             # if (state_value == 0 and st.session_state.count < 7) or st.session_state.count <= 8:
                 # problem understand
-            mcts_prompt = PromptInisilization.MCTS_prompt(message_history,user_msg)
-            best_action = MCTS.testMCTS(mcts_prompt)
 
-            promptType = PromptInisilization.self_explorerV2(message_history,user_msg,st.session_state.depression_level,st.session_state.anxiety_level,best_action)
+            promptType = PromptInisilization.self_explorerV2(message_history,user_msg,st.session_state.depression_level,st.session_state.anxiety_level)
             
             # Save in Memory for Management
             if st.session_state.chat_history is None:
