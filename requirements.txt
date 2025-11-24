@@ -2,8 +2,7 @@
 streamlit
 python-dotenv
 requests
-numpy
-pandas
+
 langchain-community==0.3.19
 openai
 langchain==0.3.19
