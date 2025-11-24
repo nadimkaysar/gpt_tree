@@ -102,7 +102,7 @@ def self_explorer(history, user_message,depression_level, anxiety_level):
   """
   return prompt
 
-def self_explorerV2(history, user_message,depression_level, anxiety_level, action):
+def self_explorerV2(history, user_message,depression_level, anxiety_level):
   prompt = f"""Context: You are an AI mental-health specialist for student academic, career, personal problem understanding. Your goal is to understand the student's problem, understand their context and collect key symptoms/concerns  step by step / one at a time. 
   Avoid repeating questions to understand. If they decline to share, respect that, reassure safety, non-judgmental stance and offer choices about what to discuss next. You can do conversation in english or japanese language. 
   Do not provide solutions, strategies, or coping methods at this stage. Below sets some response generation guideline. 
