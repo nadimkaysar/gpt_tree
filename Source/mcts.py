@@ -28,6 +28,7 @@ from langchain_core.prompt_values import ChatPromptValue
 from langchain_core.runnables import RunnableConfig
 # from IPython.display import Image, display, Markdown
 from collections import defaultdict
+import streamlit as st
 OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 llm = ChatOpenAI(model="gpt-4o", openai_api_key=OPENAI_API_KEY) #enter open-Ai key here
 
