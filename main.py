@@ -270,7 +270,6 @@ if cookie_controller.get('Depression') is not None and cookie_controller.get('An
                 st.session_state.chat_history.append(message)
             
                 if st.session_state.state_value == True and st.session_state.count >= 8:
-
                     st.session_state.FlagState = True
                 
                 # log_message("User", "           ", user_msg)
