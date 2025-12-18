@@ -19,20 +19,20 @@ from datetime import datetime, UTC, timedelta
 memory = ConversationBufferMemory(human_prefix="human", ai_prefix="AI",memory_key="history", return_messages=True)
 
 # Create a folder for all chat logs
-LOG_DIR = "/Volumes/Research/Code/MentalHealthSystem/Log/P3"
-os.makedirs(LOG_DIR, exist_ok=True)
+# LOG_DIR = "/Volumes/Research/Code/MentalHealthSystem/Log/P3"
+# os.makedirs(LOG_DIR, exist_ok=True)
 
 # Create unique session log file
-if "log_file" not in st.session_state:
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    st.session_state.log_file = os.path.join(LOG_DIR, f"chat_{timestamp}.txt")
+# if "log_file" not in st.session_state:
+#     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+#     st.session_state.log_file = os.path.join(LOG_DIR, f"chat_{timestamp}.txt")
 
-# Function to log messages to the session-specific file
-def log_message(role, action, message):
-    timestamp_time = datetime.now().strftime("%H:%M:%S")
-    log_entry = f"[{timestamp_time}] {action} {role}: {message}\n"
-    with open(st.session_state.log_file, "a", encoding="utf-8") as f:
-        f.write(log_entry)
+# # Function to log messages to the session-specific file
+# def log_message(role, action, message):
+#     timestamp_time = datetime.now().strftime("%H:%M:%S")
+#     log_entry = f"[{timestamp_time}] {action} {role}: {message}\n"
+#     with open(st.session_state.log_file, "a", encoding="utf-8") as f:
+#         f.write(log_entry)
 
 
 USER_NAME = "user"
