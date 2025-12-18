@@ -197,8 +197,8 @@ if user_msg:
         message = {'human':user_msg,'AI':response}
         st.session_state.chat_history.append(message)
 
-        log_message("User", "          ", user_msg)
-        log_message("Assistant",best_action,response)
+        # log_message("User", "          ", user_msg)
+        # log_message("Assistant",best_action,response)
 
     with st.chat_message(ASSISTANT_NAME):
         assistant_msg = ""
