@@ -4100,8 +4100,8 @@ def dbt_support(history, component, user_message,depression_level, anxiety_level
       - You have to generate your response within 70 words. I reapeat, you need to generate your response within 70 words.  
       
       <information>
-        - Need to understand human problem details (what +  why)
-        - Deeply understand patient context (Example: What is behind reason of problem)
+        - Need to understand human patient problem details (what +  why)
+        - Need understand patient reason of problem (Example: What is behind reason of problem)
         - patient's feelings and intensity (Example: I feel like this maybe affect my this or others)
         - patient's thoughts pattern 
         - patient's Behaviors pattern
