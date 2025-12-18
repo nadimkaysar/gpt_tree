@@ -4078,7 +4078,7 @@ def MCTS_prompt(con_history,last_message):
 
    return prompt
                                                                                               
-def dbt_support(history, component, user_message,depression_level, anxiety_level):
+def dbt_support(history, component, user_message,depression_level, anxiety_level,component):
   prompt = f"""Context: You are a dialactical behaviour specialist mental health psychologist.To counseling you have to work in two phases: 1 problem_understanding_phase, 2 counseling_phase.
   In first phase, your goal is to understand the student's problem, understand their context and collect key symptoms/concerns  step by step / one at a time by follow the instructions in <problem_understanding_phase></problem_understanding_phase> XML tag for understand the student's problem.
   In second phase, your goal is to give support the execute of all instructions step by step and one by one by follow the instruction in <counseling_phase></counseling_phase> XML tag. 
@@ -4100,7 +4100,7 @@ def dbt_support(history, component, user_message,depression_level, anxiety_level
                - If patient looking for solutions, strategies, or coping methods then you remind then about problem understanding phase.
                - Always give example
                - Can't generate same question, same phrase and gratitude like ('Thank you'). If patient hesitant, start with gentle, low-stakes questions before deeper ones.  
-               - Need human like natural language tone and simple sentence. You can use {action} DBT component skills.
+               - Need human like natural language tone and simple sentence.
                - You have to generate your response within 40 words. I reapeat, you need to generate your response within 40 words.  
               
               <information>
