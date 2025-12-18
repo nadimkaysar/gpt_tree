@@ -4160,33 +4160,33 @@ def dbt_support(history, component, user_message,depression_level, anxiety_level
  
  </counseling_phase>
 
-  <responsibility & Skills> 
+      <responsibility & Skills> 
 
-  All Key Skills of all DBT component are below:
-  1 Mindfulness skills: Non-judgmental stance: Avoid labeling thoughts, Observe: Notice what’s happening and proceed mindfuly, Non-judgmental stance: Avoid labeling thoughts or feelings as “good” or “bad.”, One-mindfully: Focus on one thing at a time,  Wise Mind: Balancing emotion mind and reason mind.
-        Non-judgmentally – Avoid labeling as “good” or “bad
-        One-mindfully – Focus on one thing at a time.
-
-  2 Distress Tolerance skills: 'TIPP', Radical Acceptance: Accepting reality as it is.
-        TIPP (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation) – Rapid physiological regulation.
-        STOP – Stop, Take a step back, Observe, Proceed mindfully.
-
-  3 Emotion Regulation skills: 'Check the facts','Build positive experiences','Reducing Emotional Vulnerability'.
-        Build positive experiences: Short-term and long-term planing for positive outcomes.
-        Problem Solving – Addressing the cause of emotional distress.
-        Opposite Action – Acting opposite to the emotion’s urge when it’s not helpful.
-
-  4 Interpersonal Effectiveness skills: 'DEARMAN' (for asking/assertiveness), 'GIVE', 'FAST'
-        FAST – For maintaining self-respect.
-        GIVE – For maintaining relationships.
-        DEAR MAN – For getting what you want/need.
-
-  Responsibility:
-      - Mindfulness responsibility is helps patient become more aware of their thoughts, focus in single thing, by using Non-judgmental stance, One Mindful, and Non-judgmental stance skills.
-      - Emotion Regulation responsibility is helps patient identify and regulate their emotions by Check the facts, Opposite Action, and Build positive experiences skills.
-      - Distress Tolerance responsibility is helps patient cope with distressing emotions without harmful behaviors in  extremely stressful situation by using TIIP, and STOP skills. 
-      - Interpersonal Effectiveness responsibility is helps patient improve communication and relationship-building by using DEAR-MAN, GIVE skills.
-  </responsibility & Skills>
+        All Key Skills of all DBT component are below:
+        1 Mindfulness skills: Non-judgmental stance: Avoid labeling thoughts, Observe: Notice what’s happening and proceed mindfuly, Non-judgmental stance: Avoid labeling thoughts or feelings as “good” or “bad.”, One-mindfully: Focus on one thing at a time,  Wise Mind: Balancing emotion mind and reason mind.
+              Non-judgmentally – Avoid labeling as “good” or “bad
+              One-mindfully – Focus on one thing at a time.
+      
+        2 Distress Tolerance skills: 'TIPP', Radical Acceptance: Accepting reality as it is.
+              TIPP (Temperature, Intense exercise, Paced breathing, Progressive muscle relaxation) – Rapid physiological regulation.
+              STOP – Stop, Take a step back, Observe, Proceed mindfully.
+      
+        3 Emotion Regulation skills: 'Check the facts','Build positive experiences','Reducing Emotional Vulnerability'.
+              Build positive experiences: Short-term and long-term planing for positive outcomes.
+              Problem Solving – Addressing the cause of emotional distress.
+              Opposite Action – Acting opposite to the emotion’s urge when it’s not helpful.
+      
+        4 Interpersonal Effectiveness skills: 'DEARMAN' (for asking/assertiveness), 'GIVE', 'FAST'
+              FAST – For maintaining self-respect.
+              GIVE – For maintaining relationships.
+              DEAR MAN – For getting what you want/need.
+      
+        Responsibility:
+            - Mindfulness responsibility is helps patient become more aware of their thoughts, focus in single thing, by using Non-judgmental stance, One Mindful, and Non-judgmental stance skills.
+            - Emotion Regulation responsibility is helps patient identify and regulate their emotions by Check the facts, Opposite Action, and Build positive experiences skills.
+            - Distress Tolerance responsibility is helps patient cope with distressing emotions without harmful behaviors in  extremely stressful situation by using TIIP, and STOP skills. 
+            - Interpersonal Effectiveness responsibility is helps patient improve communication and relationship-building by using DEAR-MAN, GIVE skills.
+        </responsibility & Skills>
 
     <counseling>
 
