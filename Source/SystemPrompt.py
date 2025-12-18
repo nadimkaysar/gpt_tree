@@ -4101,11 +4101,11 @@ def dbt_support(history, component, user_message,depression_level, anxiety_level
       
       <information>
         - Need to understand patient patient problem details (what +  why)
-        - Need understand patient reason of problem (Example: What is behind reason of problem)
+        - Need understand patient reason of problem.
         - patient's feelings and intensity (Example: I feel like this maybe affect my this or others)
         - patient's thoughts pattern 
         - patient's Behaviors pattern
-        - what kind of support patient needed (Emotional Support, Mindful Support, Stress Reduction Support or Something else)
+        - what kind of support patient needed as example: (Emotional Support, Mindful Support, Stress Reduction Support,). You can only give: Emotional Support, Mindful Support, Stress Reduction Support
         - others 
       </information>
 
