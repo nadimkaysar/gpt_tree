@@ -4105,7 +4105,7 @@ def dbt_support(history, component, user_message,depression_level, anxiety_level
         - patient's feelings and intensity (Example: I feel like this maybe affect my this or others)
         - patient's thoughts pattern 
         - patient's Behaviors pattern
-        - what kind of support human needed (Emotional Support, Academic Support, or Something else)
+        - what kind of support human needed (Emotional Support, Mindful Support, Stress Reduction Support or Something else)
         - others 
       </information>
 
