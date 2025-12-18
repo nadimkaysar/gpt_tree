@@ -12,19 +12,23 @@ stateChange = '''
 def dialogueStatePrompt(conversationHistory, lastMessage):
   prompt = f"""
            Context: You are dialogue state selection manager. There are two sates: problem_understanding, and counseling_support. You task is change the  state from problem_understanding: 0 to counseling_support: 1.
-           The state changing instruction are in below <StateChange> </StateChange> XML tag. The state diffault value is: 0.
+           The state changing instruction are in below <StateChange> </StateChange> XML tag. The state default value is: 0.
 
            In addition, You are a risk detector for suicidal thought and attempt of user by risk detection instructions of <risk_detection></risk_detection XML Tag. 
            
            <Context> Conversation history: {conversationHistory}, Last Human Message: {lastMessage}  </Context> 
-                    
+                                     Emotional Support, Mindful Support, Stress Reduction Support   
            <StateChange>
-           1. You have to analyze the full conversation's 'Human' and 'AI' utterances. All conversation context and Human last message in <Context></Context>.
-           2. Check Condition A and B:
-              Condition A: If the 'Human' has explicitly expressed or confirmed their needed support type (e.g., Emotional Support, Academic Support, Career Guidance), AND the AI has acknowledged, confirmed, or summarized this support type as the focus.
-              Condition B: If 'Human' and  'AI' both completed the conversation about behavior / activities.
-           3. If both condition A and B are true, then you need to change the state = 1. You have to work as AND operation for both condition A and B"
-           4. The json output response format : {stateChange}
+           1. You have to analyze the full conversation's 'Human' and 'AI' utterances. All conversation context and Human last message in <Context></Context>. For state change, you have to specifically focus in last utterance.
+           2. If "{lastMessage}" only contains of what kind of support patient needs, which is similar example like in <support></support> XML Tag. Then you need to change the state = 1.
+              <support> 
+              - I need emotional support.
+              - Maybe I need stress reduction support.
+              - I need stress reduction support.
+              - emotional support
+              - stress reduction support can be better for me.
+              </support>
+           3. The json output response format : {stateChange}
            </StateChange>
            
            <risk_detection>
@@ -51,11 +55,11 @@ def dialogueStatePromptV2(conversationHistory, lastMessage):
            In addition, You are a risk detector for suicidal thought and attempt of user by risk detection instructions of <risk_detection></risk_detection XML Tag. 
            
            <Context> Conversation history: {conversationHistory}, Last Human Message: {lastMessage}  </Context> 
-                    
+
            <StateChange>
            1. You have to analyze the full conversation's 'Human' and 'AI' utterances. All conversation context and Human last message in <Context></Context>.
            2. Check Condition A :
-              Condition A: If the 'Human' has explicitly expressed or confirmed their needed support type (e.g., Emotional Support, Academic Support, Career Guidance), AND the AI has acknowledged, confirmed, or summarized this support type as the focus.
+              Condition A: If the 'Human' has explicitly expressed or confirmed their needed support type (e.g., Emotional Support, Mindful Support, Career Guidance), AND the AI has acknowledged, confirmed, or summarized this support type as the focus.
            3. If both condition A true, then you need to change the state = 1.
            4. The json output response format : {stateChange}
            </StateChange>
