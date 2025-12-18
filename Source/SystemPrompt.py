@@ -17,10 +17,9 @@ def dialogueStatePrompt(conversationHistory, lastMessage):
            In addition, You are a risk detector for suicidal thought and attempt of user by risk detection instructions of <risk_detection></risk_detection XML Tag. 
            
            <Context> Conversation history: {conversationHistory}, Last Human Message: {lastMessage}  </Context> 
-                                     Emotional Support, Mindful Support, Stress Reduction Support   
            <StateChange>
            1. You have to analyze the full conversation's 'Human' and 'AI' utterances. All conversation context and Human last message in <Context></Context>. For state change, you have to specifically focus in last utterance.
-           2. If "{lastMessage}" only contains of what kind of support patient needs, which is similar example like in <support></support> XML Tag. Then you need to change the state = 1.
+           2. If the 'Human' has explicitly expressed or confirmed their needed support type in "{lastMessage}" utterance, which is similar example like in <support></support> XML Tag. Then you need to change the state = 1.
               <support> 
               - I need emotional support.
               - Maybe I need stress reduction support.
