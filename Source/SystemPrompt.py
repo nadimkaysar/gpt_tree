@@ -4078,7 +4078,7 @@ def MCTS_prompt(con_history,last_message):
 
    return prompt
                                                                                               
-def dbt_support(history, component, user_message,depression_level, anxiety_level,component):
+def dbt_support(history, component, user_message,depression_level, anxiety_level):
   prompt = f"""Context: You are a dialactical behaviour specialist mental health psychologist.To counseling you have to work in two phases: 1 problem_understanding_phase, 2 counseling_phase.
   In first phase, your goal is to understand the student's problem, understand their context and collect key symptoms/concerns  step by step / one at a time by follow the instructions in <problem_understanding_phase></problem_understanding_phase> XML tag for understand the student's problem.
   In second phase, your goal is to give support the execute of all instructions step by step and one by one by follow the instruction in <counseling_phase></counseling_phase> XML tag. 
