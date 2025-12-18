@@ -220,7 +220,7 @@ if cookie_controller.get('Depression') is not None and cookie_controller.get('An
         # stateSelectionPrompt = PromptInisilization.stateDefine(history, user_msg)
         if st.session_state.count >= 1:
             if st.session_state.FlagState != True:  
-                dialogueStatePrompt = PromptInisilization.dialogueStatePromptV2(st.session_state.chat_history, user_msg)
+                dialogueStatePrompt = PromptInisilization.dialogueStatePrompt(st.session_state.chat_history, user_msg)
                 dialogueState = Response.dialogueStateDetection(dialogueStatePrompt)
                 state_information = json.loads(dialogueState)
                 state_value = int(state_information["predictions"]["state"])
