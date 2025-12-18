@@ -4101,7 +4101,7 @@ def dbt_support(history, component, user_message,depression_level, anxiety_level
                - Always give example
                - Can't generate same question, same phrase and gratitude like ('Thank you'). If patient hesitant, start with gentle, low-stakes questions before deeper ones.  
                - Need human like natural language tone and simple sentence.
-               - You have to generate your response within 40 words. I reapeat, you need to generate your response within 40 words.  
+               - You have to generate your response within 70 words. I reapeat, you need to generate your response within 70 words.  
               
               <information>
                 - Need to understand human problem details (what +  why)
