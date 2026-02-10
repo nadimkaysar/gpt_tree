@@ -216,6 +216,13 @@ if user_msg:
     st.session_state.chat_log.append({"name": ASSISTANT_NAME, "msg": assistant_msg})
     print(st.session_state.chat_log)
 
+def chatlog_to_txt(chat_log):
+    lines = []
+    for msg in chat_log:
+        role = "User" if msg["name"] == "user" else "Assistant"
+        lines.append(f"{role}: {msg['msg']}")
+    return "\n\n".join(lines)
+
 if st.button("Download Chat"):
     chat_text = chatlog_to_txt(st.session_state.chat_log)
 
