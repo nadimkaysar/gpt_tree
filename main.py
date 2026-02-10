@@ -218,14 +218,15 @@ if user_msg:
 
 def chatlog_to_txt(chat_log):
     lines = []
+    timestamp_time = datetime.now().strftime("%H:%M:%S")
     for msg in chat_log:
         role = "User" if msg["name"] == "user" else "Assistant"
-        lines.append(f"{role}: {msg['msg']}")
+        lines.append(f"{timestamp_time}   {role}: {msg['msg']}")
     return "\n\n".join(lines)
 
 if st.button("Download Chat"):
     chat_text = chatlog_to_txt(st.session_state.chat_log)
-
+    
     st.download_button(
         label="Click to download",
         data=chat_text,
