@@ -216,3 +216,14 @@ if user_msg:
     st.session_state.chat_log.append({"name": ASSISTANT_NAME, "msg": assistant_msg})
     print(st.session_state.chat_log)
 
+if st.button("Download Chat"):
+    chat_text = chatlog_to_txt(st.session_state.chat_log)
+
+    st.download_button(
+        label="Click to download",
+        data=chat_text,
+        file_name="chat_log.txt",
+        mime="text/plain"
+    )
+
+
