@@ -196,6 +196,7 @@ if user_msg:
         # Save in Session
         message = {'human':user_msg,'AI':response}
         st.session_state.chat_history.append(message)
+        print(st.session_state.chat_history)
 
         # log_message("User", "          ", user_msg)
         # log_message("Assistant",best_action,response)
