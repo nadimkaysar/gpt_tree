@@ -214,4 +214,5 @@ if user_msg:
     # print("State Log Print for the system: ", st.session_state.state_log )
     st.session_state.chat_log.append({"name": USER_NAME, "msg": user_msg})
     st.session_state.chat_log.append({"name": ASSISTANT_NAME, "msg": assistant_msg})
+    print(st.session_state.chat_log)
 
