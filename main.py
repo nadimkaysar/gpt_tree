@@ -169,7 +169,7 @@ if user_msg:
         
         # promptType = PromptInisilization.EnglishConversationPromptForGPT4oV8_testing(message_history,best_action,user_msg)
         # promptType = PromptInisilization.EnglishConversationPromptFor_Student_V11(message_history,best_action,user_msg)
-        promptType = PromptInisilization.dbt_support(message_history,best_action,user_msg,st.session_state.depression_level,st.session_state.anxiety_level)
+        promptType = PromptInisilization.dbt_supportV5(message_history,best_action,user_msg,st.session_state.depression_level,st.session_state.anxiety_level)
         # promptType = PromptInisilization.JapaneseConversationPromptFor_Student_V12(message_history,best_action,user_msg)
         # promptType = PromptInisilization.EnglishConversationPromptForGPT4oV7_japansese(message_history,best_action,user_msg)
     
