@@ -4455,57 +4455,60 @@ def dbt_supportV5(history, component, user_message,depression_level, stress_leve
       Example-1
       -------------
 
-      AI: Now you are in support phase, and I would like to guide you. I understand your situation, you are going through tough situation. Anyone in your position might feel disappointed and worried. 
+Example-1
+-------------
 
-      Human: Sure, Let’s do that.
-      AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that after the exam, you started to doubt your abilities. You are thinking like ‘I am not perfect and capable enough’, Am I right?
+AI: Now you are in support phase, and I would like to guide you. I understand your situation, you are going through tough situation. Anyone in your position might feel disappointed and worried. 
 
-      Human: Yes, I usually think I’m not smart or capable enough for these exams.
-      AI: Your thinking is valid, and many people face same things in tough situation. Let's use and apply a DBT skill called ‘Opposite Action’ for thought reframing of your thinking. It helps you make your thoughts fully balanced with situation. Are you well-prepared for the exam, and will you succeed before in any exam or difficult task? It helpful to challenge your thought.
+Human: Sure, Let’s do that.
+AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that after the exam, you started to doubt your abilities. What do you think/belief about yourself in this situation as example: I am not good, I am not perfect, something else?
+
+Human: I usually think I’m not smart or capable enough for these exams.
+AI: Your thinking is valid, and many people face same things in tough situation. Let's use and apply a DBT skill called ‘Opposite Action’ for thought reframing of your thinking. It helps you make your thoughts fully balanced with situation. Are you well-prepared for the exam, and will you succeed before in any exam? Do you ever success to manage any difficult situation in your life?
+ 
+Human: Yes, I studied a lot before the exam and success. How I used the DBT skill called ‘Opposite Action’? 
+AI:  Opposite Action: For the Opposite Action skill, you might think, ‘I’m a smart and good student for this exam. Instead of thinking, “I’m not a good student and smart,” try reframing it as, “I’ve done well in my previous exam. If I study and prepare more with hard work, then I will be successful by correcting my mistakes.” It will help you think more balanced thoughts about yourself. Let’s apply another DBT skill, Check and Fact skill' to improve your thinking.
+
+Human: Sure.
+AI: Check the Fact: When you're thinking that way, then separate the facts from judgment, ask yourself: Does my thinking/thought match the situation? Does it help me at all? This can help you see things more clearly and think about yourself and your previous capabilities. Remember yourself: “I’ve prepared, and I can recover from small mistakes. Enhance your awareness about your self-thinking can be help full by separating situation and fact. Do you think this help you to make balance thought?
+
+ Human: I think it’s help me for now. How I separate the fact and situation?
+AI: You can separate them by asking yourself, “What did I actually observe, and what am I adding with my thoughts?” For example, a fact is: “I studied a lot and have passed exams before.” A thought or interpretation is: “I’m not smart enough because I made mistakes.” It helps your clearer view about yourself and previous capability and performance. Let’s try real coping strategies for cope with situation.
       
-      Human: Yes, I studied a lot before the exam and success. How I used the DBT skill called ‘Opposite Action’? 
-      AI:  Opposite Action: For the Opposite Action skill, you might think, ‘I’m a smart and good student for this exam. Instead of thinking, “I’m not a good student and smart,” try reframing it as, “I’ve done well in my previous exam. If I study and prepare more with hard work, then I will be successful by correcting my mistakes.” It will help you think more balanced thoughts about yourself. Let’s apply another DBT skill, Check and Fact skill' to improve your thinking.
+Human: Sure
+AI: When feel that kind of situation then you can apply TIPP. Think as like: I want to increase your confidence and self-capability for future exams and a coping with current situation. If anxiety spikes, and you feel you can’t study for an exam, try the 3-minute TIPP: hold an ice-cold shower face splash (or hold an ice-pack on your face for 20s), then 60 seconds paced breathing (inhale 4, out 6). Then return to a 5-minute micro-task. Let's work on a gentle coping-strategies.
 
-      Human: Sure.
-      AI: Check the Fact: When you're thinking that way, then separate the facts from judgment, ask yourself: Does my thinking/thought match the situation? Does it help me at all? This can help you see things more clearly and think about yourself and your previous capabilities. Remember yourself: “I’ve prepared, and I can recover from small mistakes. Enhance your awareness about your self-thinking can be help full by separating situation and fact. Do you think this help you to make balance thought?
-
-      Human: I think it’s help me for now. How I separate the fact and situation?
-      AI: You can separate them by asking yourself, “What did I actually observe, and what am I adding with my thoughts?” For example, a fact is: “I studied a lot and have passed exams before.” A thought or interpretation is: “I’m not smart enough because I made mistakes.” It helps your clearer view about yourself and previous capability and performance. Let’s try real coping strategies for cope with situation.
-            
-      Human: Sure
-      AI: When feel that kind of situation then you can apply TIPP. Think as like: I want to increase your confidence and self-capability for future exams and a coping with current situation. If anxiety spikes, and you feel you can’t study for an exam, try the 3-minute TIPP: hold an ice-cold shower face splash (or hold an ice-pack on your face for 20s), then 60 seconds paced breathing (inhale 4, out 6). Then return to a 5-minute micro-task. Let's work on a gentle coping-strategies.
-
-      Human: Okay. Let’s do that.
-      AI: You can practice past exam questions and review the concepts slowly. Identify 2–3 difficult topics for exam preparation. Study only one topic for 25 minutes (One-Mindfully). End by writing one thing you understood. Study the same topic again for 25–30 minutes. Another thing you can do, which is also important: You can always self-talk in a positive way with kindness, and challenge your self-negative thoughts by fact-checking.
+ Human: Okay. Let’s do that.
+AI: You can practice past exam questions and review the concepts slowly. Identify 2–3 difficult topics for exam preparation. Study only one topic for 25 minutes (One-Mindfully). End by writing one thing you understood. Study the same topic again for 25–30 minutes. Another thing you can do, which is also important: You can always self-talk in a positive way with kindness, and challenge your self-negative thoughts by fact-checking.
 
 
-      Example-2
-      -------------
-      AI: Now you are in support phase, and I would like to help to change yourself thinking. I understand your situation, you are going through tough situation. Anyone in your position might feel disappointed and worried. 
+Example-2
+-------------
+AI: Now you are in support phase, and I would like to help to change yourself thinking. I understand your situation, you are going through tough situation. Anyone in your position might feel disappointed and worried. 
 
-      Human: Sure, how you will help me to change my thinking in a positive way?
-      AI: According to my skills and knowledge, I will help you by thought reframing, self-awareness building. Let’s start with self-view improvement.
+Human: Sure, how you will help me to change my thinking in a positive way?
+AI: According to my skills and knowledge, I will help you by thought reframing, self-awareness building. Let’s start with self-view improvement.
 
-      Human: Sure. Let’s start.
-      AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that you are nervous during your English presentation, you are worried about it. You are thinking like: You are not good enough or capable to speak in English in public? Am I right?
+Human: Sure. Let’s start.
+AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that you are nervous during your English presentation, you are worried about it. What exactly do you think / belief about yourself in this situation as example: I am not good in English presentation, I am not capable English speaking in front of others, something else?
 
-      Human: Yes, I am not capable English speaking in front of others for my presentation.
-      AI: Your thinking is valid, and many people face same things in tough situation. Let's use and apply a DBT skill called ‘Opposite Action’ for thought reframing of your thinking. It helps you make your thoughts fully balanced with situation. Are you well-prepared and give presentation in English or other language and success? Do you ever success to manage any difficult situation in your life? It helpful to challenge your thought.
+Human: I am not capable English speaking in front of others for my presentation.
+AI: Your thinking is valid, and many people face same things in tough situation. Let's use and apply a DBT skill called ‘Opposite Action’ for thought reframing of your thinking. It helps you make your thoughts fully balanced with situation. Are you well-prepared and give presentation in English or other language and success? Do you ever success to manage any difficult situation in your life?
 
-      Human: Yes, I success in presentation when I present in my native language. 
-      AI:  Nice, it shows your ability. For the Opposite Action skill, you might think, ‘I’m a not good at English presentation in front of others. Instead of thinking, “I’m not a good at English presentation,” try reframing it as, “I’ve done well in my previous native language presentation. If I study and prepare more with hard work, then I will be successful for giving presentation in public.” It will help you think more balanced thoughts about yourself about speaking publicly for presentation. Let’s apply another DBT skill, ‘Non-judgmental’ to improve your thinking.
+Human: Yes, I success in presentation when I present in my native language. 
+AI:  Nice, it shows your ability. For the Opposite Action skill, you might think, ‘I’m a not good at English presentation in front of others. Instead of thinking, “I’m not a good at English presentation,” try reframing it as, “I’ve done well in my previous native language presentation. If I study and prepare more with hard work, then I will be successful for giving presentation in public.” It will help you think more balanced thoughts about yourself about speaking publicly for presentation. Let’s apply another DBT skill, ‘Non-judgmental’ to improve your thinking.
 
-      Human: Okay.
-      AI: To Non-judgmental Stance, When you notice your thoughts or feelings, try to accept them as they are, without labeling them as good or bad. Just let them be and focus on understanding rather than judging. This can help you see without blaming yourself. Remember yourself: “I’ve prepared, and I can recover from small mistakes of public speaking. Enhance your awareness about your self-thinking can be help full by separating situation and fact. Do you think this help you to make balance thought?
+Human: Okay.
+AI: To Non-judgmental Stance, When you notice your thoughts or feelings, try to accept them as they are, without labeling them as good or bad. Just let them be and focus on understanding rather than judging. This can help you see without blaming yourself. Remember yourself: “I’ve prepared, and I can recover from small mistakes of public speaking. Enhance your awareness about your self-thinking can be help full by separating situation and fact. Do you think this help you to make balance thought?
 
-      Human: I think it’s help me for now. 
-      AI: That’s good. To understand this better, try using a non-judgmental stance. Ask yourself, “What did I actually observe, and what judgment am I adding to it?” For example, a fact is: “I am good at my language presentation.” A judgment is: “I’m not good at public speaking in English for presentation.” Focusing on facts without judging yourself can help you see your efforts and abilities more clearly. Now, let’s explore some coping strategies to handle this situation.
+Human: I think it’s help me for now. 
+AI: That’s good. To understand this better, try using a non-judgmental stance. Ask yourself, “What did I actually observe, and what judgment am I adding to it?” For example, a fact is: “I am good at my language presentation.” A judgment is: “I’m not good at public speaking in English for presentation.” Focusing on facts without judging yourself can help you see your efforts and abilities more clearly. Now, let’s explore some coping strategies to handle this situation.
 
-      Human: Sure
-      AI:  Practice your presentation alone for 10–15 minutes.  Use a mirror or record yourself once. Review feedback calmly and practice again. Reflect: What improved? What felt easier? It will help you to increase your confidence and self-capability for public presentation. You practice in front your friend and family member get feedback from them for your improvement. Also, you need to aware about your thoughts. Let’s try another coping strategy.
-      
-      Human: Okay. Let’s do that.
-      AI: You can use STOP method: Stop: Pause and take a moment to gather your thoughts, take a step back: Step away mentally or physically to take a breath, Observe: Notice your feelings and the situation, Proceed mindfully: Take deliberate, calm steps forward. You can always self-talk in a positive way with kindness, and challenge your self-negative thoughts by fact-checking.
+Human: Sure
+AI:  Practice your presentation alone for 10–15 minutes.  Use a mirror or record yourself once. Review feedback calmly and practice again. Reflect: What improved? What felt easier? It will help you to increase your confidence and self-capability for public presentation. You practice in front your friend and family member get feedback from them for your improvement. Also, you need to aware about your thoughts. Let’s try another coping strategy.
+ 
+Human: Okay. Let’s do that.
+AI: You can use STOP method: Stop: Pause and take a moment to gather your thoughts, take a step back: Step away mentally or physically to take a breath, Observe: Notice your feelings and the situation, Proceed mindfully: Take deliberate, calm steps forward. You can always self-talk in a positive way with kindness, and challenge your self-negative thoughts by fact-checking.
 
     </counseling>
 
