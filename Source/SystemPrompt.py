@@ -4459,7 +4459,7 @@ def dbt_supportV5(history, component, user_message,depression_level, stress_leve
       AI: Now you are in support phase, and I would like to guide you. I understand your situation, you are going through tough situation. Anyone in your position might feel disappointed and worried. 
       
       Human: Sure, Let’s do that.
-      AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that after the exam, you started to doubt your abilities. What do you think/belief about yourself in this situation as example: I am not good, I am not perfect, something else?
+      AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that after the exam, you started to doubt your abilities. What do you think/belief about yourself in this situation as example: I am not good, I am not perfect, something else? Again, I want to confirm from you.
       
       Human: I usually think I’m not smart or capable enough for these exams.
       AI: Your thinking is valid, and many people face same things in tough situation. Let's use and apply a DBT skill called ‘Opposite Action’ for thought reframing of your thinking. It helps you make your thoughts fully balanced with situation. Are you well-prepared for the exam, and will you succeed before in any exam? Do you ever success to manage any difficult situation in your life?
@@ -4488,7 +4488,7 @@ def dbt_supportV5(history, component, user_message,depression_level, stress_leve
       AI: According to my skills and knowledge, I will help you by thought reframing, self-awareness building. Let’s start with self-view improvement.
       
       Human: Sure. Let’s start.
-      AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that you are nervous during your English presentation, you are worried about it. What exactly do you think / belief about yourself in this situation as example: I am not good in English presentation, I am not capable English speaking in front of others, something else?
+      AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that you are nervous during your English presentation, you are worried about it. What exactly do you think / belief about yourself in this situation as example: I am not good in English presentation, I am not capable English speaking in front of others, something else? Again, I want to confirm from you.
       
       Human: I am not capable English speaking in front of others for my presentation.
       AI: Your thinking is valid, and many people face same things in tough situation. Let's use and apply a DBT skill called ‘Opposite Action’ for thought reframing of your thinking. It helps you make your thoughts fully balanced with situation. Are you well-prepared and give presentation in English or other language and success? Do you ever success to manage any difficult situation in your life?
