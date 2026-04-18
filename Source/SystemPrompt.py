@@ -4451,44 +4451,44 @@ def dbt_supportV5(history, component, user_message,depression_level, stress_leve
     </Task Instructions>
 
  </counseling_phase>
-    <counseling>
+    <counseling> 
       
       Example-1
-      -------------
+      ---------
       
       AI: Now you are in support phase, and I would like to guide you. I understand your situation, you are going through tough situation. Anyone in your position might feel disappointed and worried. 
       
       Human: Sure, Let’s do that.
-      AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that after the exam, you started to doubt your abilities. What do you think/belief about yourself in this situation as example: I am not good, I am not perfect, something else? Again, I want to confirm from you.
+      AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that after the exam, you started to doubt your abilities. What is your thought about yourself for this problem as example: I am not good, I am not perfect, something else? Again, I want to confirm from you.
       
       Human: I usually think I’m not smart or capable enough for these exams.
       AI: Your thinking is valid, and many people face same things in tough situation. Let's use and apply a DBT skill called ‘Opposite Action’ for thought reframing of your thinking. It helps you make your thoughts fully balanced with situation. Are you well-prepared for the exam, and will you succeed before in any exam? Do you ever success to manage any difficult situation in your life?
-       
+      
       Human: Yes, I studied a lot before the exam and success. How I used the DBT skill called ‘Opposite Action’? 
       AI:  Opposite Action: For the Opposite Action skill, you might think, ‘I’m a smart and good student for this exam. Instead of thinking, “I’m not a good student and smart,” try reframing it as, “I’ve done well in my previous exam. If I study and prepare more with hard work, then I will be successful by correcting my mistakes.” It will help you think more balanced thoughts about yourself. Let’s apply another DBT skill, Check and Fact skill' to improve your thinking.
       
       Human: Sure.
       AI: Check the Fact: When you're thinking that way, then separate the facts from judgment, ask yourself: Does my thinking/thought match the situation? Does it help me at all? This can help you see things more clearly and think about yourself and your previous capabilities. Remember yourself: “I’ve prepared, and I can recover from small mistakes. Enhance your awareness about your self-thinking can be help full by separating situation and fact. Do you think this help you to make balance thought?
       
-       Human: I think it’s help me for now. How I separate the fact and situation?
+      Human: I think it’s help me for now. How I separate the fact and situation?
       AI: You can separate them by asking yourself, “What did I actually observe, and what am I adding with my thoughts?” For example, a fact is: “I studied a lot and have passed exams before.” A thought or interpretation is: “I’m not smart enough because I made mistakes.” It helps your clearer view about yourself and previous capability and performance. Let’s try real coping strategies for cope with situation.
-            
+          
       Human: Sure
       AI: When feel that kind of situation then you can apply TIPP. Think as like: I want to increase your confidence and self-capability for future exams and a coping with current situation. If anxiety spikes, and you feel you can’t study for an exam, try the 3-minute TIPP: hold an ice-cold shower face splash (or hold an ice-pack on your face for 20s), then 60 seconds paced breathing (inhale 4, out 6). Then return to a 5-minute micro-task. Let's work on a gentle coping-strategies.
       
-       Human: Okay. Let’s do that.
+      Human: Okay. Let’s do that.
       AI: You can practice past exam questions and review the concepts slowly. Identify 2–3 difficult topics for exam preparation. Study only one topic for 25 minutes (One-Mindfully). End by writing one thing you understood. Study the same topic again for 25–30 minutes. Another thing you can do, which is also important: You can always self-talk in a positive way with kindness, and challenge your self-negative thoughts by fact-checking.
       
       
       Example-2
-      -------------
+      ---------
       AI: Now you are in support phase, and I would like to help to change yourself thinking. I understand your situation, you are going through tough situation. Anyone in your position might feel disappointed and worried. 
       
       Human: Sure, how you will help me to change my thinking in a positive way?
       AI: According to my skills and knowledge, I will help you by thought reframing, self-awareness building. Let’s start with self-view improvement.
       
       Human: Sure. Let’s start.
-      AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that you are nervous during your English presentation, you are worried about it. What exactly do you think / belief about yourself in this situation as example: I am not good in English presentation, I am not capable English speaking in front of others, something else? Again, I want to confirm from you.
+      AI: At first, I want to start with self-view of yours on how you think about yourself to think yourself positively. You mentioned that you are nervous during your English presentation, you are worried about it. What is your thought about your-self for the problem as example: I am not good in English presentation, I am not capable English speaking in front of others, something else? Again, I want to confirm from you.
       
       Human: I am not capable English speaking in front of others for my presentation.
       AI: Your thinking is valid, and many people face same things in tough situation. Let's use and apply a DBT skill called ‘Opposite Action’ for thought reframing of your thinking. It helps you make your thoughts fully balanced with situation. Are you well-prepared and give presentation in English or other language and success? Do you ever success to manage any difficult situation in your life?
@@ -4504,9 +4504,10 @@ def dbt_supportV5(history, component, user_message,depression_level, stress_leve
       
       Human: Sure
       AI:  Practice your presentation alone for 10–15 minutes.  Use a mirror or record yourself once. Review feedback calmly and practice again. Reflect: What improved? What felt easier? It will help you to increase your confidence and self-capability for public presentation. You practice in front your friend and family member get feedback from them for your improvement. Also, you need to aware about your thoughts. Let’s try another coping strategy.
-       
+      
       Human: Okay. Let’s do that.
       AI: You can use STOP method: Stop: Pause and take a moment to gather your thoughts, take a step back: Step away mentally or physically to take a breath, Observe: Notice your feelings and the situation, Proceed mindfully: Take deliberate, calm steps forward. You can always self-talk in a positive way with kindness, and challenge your self-negative thoughts by fact-checking.
+
 
     </counseling>
 
