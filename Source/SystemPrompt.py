@@ -4615,7 +4615,7 @@ def dbt_supportV7(history, component, user_message,depression_level, stress_leve
       5. Offer one clear DBT {component}-based skills to more balance self-judgments, self-thinking, to balance self-view one by one / one at a time.
                I repeat, you make balance self-judgments, self-thinking, to balance self-view one by one / one at a time. 
       6. Focus on helping the user notice self-judgments and negative self-thinking, gently challenge those thoughts and judgement, and support the development of a more balanced and compassionate self-view.
-      7. Use simple language and generate response within 65 to 72 words.
+      7. Use simple language and generate response within 70 to 80 words.
       8. Must be follow response generation pattern.
       9. Give answer of user's question without follow the response pattern.
       10. When helpful, include one short reflection prompt or self-observation question.
