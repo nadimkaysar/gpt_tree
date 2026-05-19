@@ -4567,8 +4567,10 @@ def dbt_supportV7(history, component, user_message,depression_level, stress_leve
               
               <information>
               - Need to deeply understand human problem details like: what's the problem,  why this problem happen
+              - Need to deeply understand triggred situation like:  When and how it happen
               - patient's feelings and intensity (Example: I feel like this maybe affect my this or others)
               - patint's thought's and thought's pattern. ( Pattern Example: I am not good enough)
+              - patient's Behaviors pattern and change.
               - Need to informe to patient about next phase (Example: Now I will move next phase to to change your thinking about yourself)
               </information>
             
